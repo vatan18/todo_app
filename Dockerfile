@@ -1,7 +1,5 @@
-FROM python:3
-RUN pip install django==3.2
-
+FROM python:3.9
 COPY . .
-RUN python manage.py migrate
+RUN pip3 install -r requirements.txt 
 EXPOSE 9000
 CMD ["python","manage.py","runserver","0.0.0.0:9000"]
